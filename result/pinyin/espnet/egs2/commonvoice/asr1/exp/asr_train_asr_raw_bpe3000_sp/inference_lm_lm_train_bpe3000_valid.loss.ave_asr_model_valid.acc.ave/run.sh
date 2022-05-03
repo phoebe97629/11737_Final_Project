@@ -1,0 +1,1 @@
+./asr.sh --inference_nj 10 --stage 12 --stop_stage 12 --train_set train --valid_set dev --test_sets 'dev test' --speed_perturb_factors '0.9 1.0 1.1' --token_type bpe --nbpe 3000 --asr_config conf/train_asr.yaml --use_lm true --stage 12 "$@"; exit $?

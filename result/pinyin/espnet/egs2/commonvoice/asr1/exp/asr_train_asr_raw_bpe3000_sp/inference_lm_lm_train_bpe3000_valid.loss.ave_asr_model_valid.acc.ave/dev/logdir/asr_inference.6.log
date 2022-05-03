@@ -1,0 +1,28 @@
+# python3 -m espnet2.bin.asr_inference --batch_size 1 --ngpu 0 --data_path_and_name_and_type dump/raw/dev/wav.scp,speech,sound --key_file exp/asr_train_asr_raw_bpe3000_sp/inference_lm_lm_train_bpe3000_valid.loss.ave_asr_model_valid.acc.ave/dev/logdir/keys.6.scp --asr_train_config exp/asr_train_asr_raw_bpe3000_sp/config.yaml --asr_model_file exp/asr_train_asr_raw_bpe3000_sp/valid.acc.ave.pth --output_dir exp/asr_train_asr_raw_bpe3000_sp/inference_lm_lm_train_bpe3000_valid.loss.ave_asr_model_valid.acc.ave/dev/logdir/output.6 --lm_train_config exp/lm_train_bpe3000/config.yaml --lm_file exp/lm_train_bpe3000/valid.loss.ave.pth 
+# Started at Tue May  3 07:58:26 UTC 2022
+#
+/content/espnet/tools/anaconda/envs/espnet/bin/python3 /content/espnet/espnet2/bin/asr_inference.py --batch_size 1 --ngpu 0 --data_path_and_name_and_type dump/raw/dev/wav.scp,speech,sound --key_file exp/asr_train_asr_raw_bpe3000_sp/inference_lm_lm_train_bpe3000_valid.loss.ave_asr_model_valid.acc.ave/dev/logdir/keys.6.scp --asr_train_config exp/asr_train_asr_raw_bpe3000_sp/config.yaml --asr_model_file exp/asr_train_asr_raw_bpe3000_sp/valid.acc.ave.pth --output_dir exp/asr_train_asr_raw_bpe3000_sp/inference_lm_lm_train_bpe3000_valid.loss.ave_asr_model_valid.acc.ave/dev/logdir/output.6 --lm_train_config exp/lm_train_bpe3000/config.yaml --lm_file exp/lm_train_bpe3000/valid.loss.ave.pth
+Traceback (most recent call last):
+  File "/content/espnet/tools/anaconda/envs/espnet/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/content/espnet/tools/anaconda/envs/espnet/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/content/espnet/espnet2/bin/asr_inference.py", line 633, in <module>
+    main()
+  File "/content/espnet/espnet2/bin/asr_inference.py", line 629, in main
+    inference(**kwargs)
+  File "/content/espnet/espnet2/bin/asr_inference.py", line 413, in inference
+    speech2text = Speech2Text.from_pretrained(
+  File "/content/espnet/espnet2/bin/asr_inference.py", line 333, in from_pretrained
+    return Speech2Text(**kwargs)
+  File "/content/espnet/espnet2/bin/asr_inference.py", line 89, in __init__
+    asr_model, asr_train_args = task.build_model_from_file(
+  File "/content/espnet/espnet2/tasks/abs_task.py", line 1818, in build_model_from_file
+    with config_file.open("r", encoding="utf-8") as f:
+  File "/content/espnet/tools/anaconda/envs/espnet/lib/python3.9/pathlib.py", line 1252, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/content/espnet/tools/anaconda/envs/espnet/lib/python3.9/pathlib.py", line 1120, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'exp/asr_train_asr_raw_bpe3000_sp/config.yaml'
+# Accounting: time=5 threads=1
+# Ended (code 1) at Tue May  3 07:58:31 UTC 2022, elapsed time 5 seconds
